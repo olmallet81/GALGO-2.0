@@ -24,4 +24,4 @@ The pre-existing methods are:
 - single point mutation (SPM)
 - uniform mutation (UNM)
 
-GALGO also contains a default method for adaptation to constraints.
+GALGO also contains a default method for adaptation to constraints (DAC).
