@@ -10,10 +10,12 @@ GALGO is a C++ template library, headers only, designed to solve a problem under
 - linear rank-based selection with selective pressure (RSP)
 - tournament selection (TNT)
 - transform ranking selection (TRS)
+
 ## Cross-Over methods
 - one point cross-over (P1XO)
 - two point cross-over (P2XO)
 - uniform cross-over (UXO)
+
 ## Mutation methods
 - boundary mutation (BDM)
 - single point mutation (SPM)
