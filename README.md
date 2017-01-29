@@ -23,3 +23,5 @@ The pre-existing methods are:
 - boundary mutation (BDM)
 - single point mutation (SPM)
 - uniform mutation (UNM)
+
+GALGO also contains a default method for adaptation to constraints.
