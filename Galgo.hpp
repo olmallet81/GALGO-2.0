@@ -51,7 +51,7 @@ using CHR = std::shared_ptr<Chromosome<T,N>>;
 
 /*-------------------------------------------------------------------------------------------------*/
 
-#include "Randomize.h"
+#include "Randomize.hpp"
 #include "Converter.hpp"
 #include "Evolution.hpp"
 #include "Chromosome.hpp"
