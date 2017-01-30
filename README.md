@@ -14,11 +14,11 @@ X will be then converted into a binary string of 0 and 1 and added to the new ch
 Y = minY + (X / MAXVAL) * (maxY - minY)
 ```
 This method of generating a random ratio rather than a random real number allows to achieve faster convergence as only values inside the boundaries [minY,maxY] will be generated when initializing the chromosome population but also when recombining and mutating them.
-The precision of the solution will be:
+The estimated parameter accuracy will be:
 ```
-precision = (maxY - minY) / MAXVAL
+accuracy = (maxY - minY) / MAXVAL
 ```
-If the chosen number of bits N is large the algorithm will struggle to achieve fast convergence as the number of possible solutions will be too great, if it is too small the algorithm will struggle to find the global extremum and risk to quickly stall on a local extremum due to the lack of diversity in the possible solutions.
+If the chosen number of bits N is large the algorithm will struggle to achieve fast convergence as the number of possible solutions within the boundaries will be too great, on the contrary, if it is too small the algorithm will struggle to find the global extremum and risk to quickly stall on a local extremum due to the lack of diversity in the population.
 
 
 # Evolution
