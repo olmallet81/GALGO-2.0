@@ -35,9 +35,9 @@ public:
    void (*CrossOver)(const Population<T,N>&, CHR<T,N>&, CHR<T,N>&) = P2XO;
    // mutation method functor initialized to single-point mutation 
    void (*Mutation)(CHR<T,N>&) = SPM;  
-   // adaptation method to constraints functor                                        
+   // adaptation method to constraint functor                                        
    void (*Adaptation)(Population<T,N>& x) = nullptr; 
-   // constraint(s) function functor                               
+   // constraint function functor                               
    std::vector<T> (*Constraint)(const std::vector<T>&) = nullptr; 
 
    T tolerance = 0.0; // terminal condition (inactive if equal to zero)
@@ -183,9 +183,9 @@ void GeneticAlgorithm<T,N>::run()
       }
    } 
 
-   // outputting contraint value(s)
+   // outputting contraint value
    if (Constraint != nullptr) {
-      // getting best parameter constraint value(s) 
+      // getting best parameter constraint value 
       std::vector<T> cst = pop(0)->getConstraint(); 
       if (output) {
          std::cout << "\n Constraint\n";
