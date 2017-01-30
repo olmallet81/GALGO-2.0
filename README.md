@@ -15,6 +15,11 @@ Y = minY + (X / MAXVAL) * (maxY - minY)
 ```
 Where minY is the parameter lower bound and maxY its upper bound.
 This method allows to achieve faster convergence as only values inside the boundaries [minY,maxY] will be generated when initializing the chromosome population but also when recombining and mutating them.
+The precision of the solution will be:
+```
+precision = (maxY - minY) / MAXVAL
+```
+If the number of bits is large the algorithm will struggle to achieve convergence as the number of possible solutions will be greater, if it is too small the algorithm will struggle to find the global extremum and risk to quickly stall on a local extremum as the number of possible solutions will be smaller.
 
 
 The pre-existing methods are:
