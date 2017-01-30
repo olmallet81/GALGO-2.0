@@ -31,7 +31,7 @@ int main()
    std::vector<double> UB({1.0,13.0});
 
    // initiliazing genetic algorithm
-   galgo::GeneticAlgorithm<double> ga(MyObjective<double>::Objective,200,LB,UB,50,true);
+   galgo::GeneticAlgorithm<double> ga(MyObjective<double>::Objective,100,LB,UB,50,true);
  
    // setting constraints
    ga.Constraint = MyConstraint;
