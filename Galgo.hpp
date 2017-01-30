@@ -4,7 +4,6 @@
 //================================================================================================= 
 
 #include <algorithm>
-#include <armadillo>
 #include <bitset>
 #include <iomanip>
 #include <iostream>
@@ -21,8 +20,6 @@
 
 #include <climits>
 #include <cmath>
-#include <ctime>
-#include <cstdlib>
 #include <cstring>
 
 /*-------------------------------------------------------------------------------------------------*/
