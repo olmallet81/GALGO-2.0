@@ -116,24 +116,23 @@ bool GeneticAlgorithm<T,N>::check() const
       }
    }
    if (SP < 1.0 || SP > 2.0) {
-      std::cerr << " Error: in class galgo::GeneticAlgorithm<T>, selective pressure (SP) cannot be outside [1.0,2.0], please choose a value within this interval.\n";
+      std::cerr << " Error: in class galgo::GeneticAlgorithm<T>, selective pressure (SP) cannot be outside [1.0,2.0], please choose a real value within this interval.\n";
       return false;
    }
    if (elitpop > popsize || elitpop < 0) {
-      std::cerr << " Error: in class galgo::GeneticAlgorithm<T>, elit population (elitpop) cannot outside [0,popsize], please choose an integer value within this interval.\n";
+      std::cerr << " Error: in class galgo::GeneticAlgorithm<T>, elit population (elitpop) cannot outside [0,popsize], please choose an integral value within this interval.\n";
       return false;
    }
-   if (covrate < 0 || covrate > 100) {
-      std::cerr << " Error: in class galgo::GeneticAlgorithm<T>, cross-over rate (covrate) cannot outside [0,100], please choose an integer value within this interval.\n";
+   if (covrate < 0.0 || covrate > 1.0) {
+      std::cerr << " Error: in class galgo::GeneticAlgorithm<T>, cross-over rate (covrate) cannot outside [0.0,1.0], please choose a real value within this interval.\n";
       return false;
    }
    if (genstep <= 0) {
-      std::cerr << " Error: in class galgo::GeneticAlgorithm<T>, generation step (genstep) cannot be <= 0, please choose an integer value > 0.\n";
+      std::cerr << " Error: in class galgo::GeneticAlgorithm<T>, generation step (genstep) cannot be <= 0, please choose an integral value > 0.\n";
       return false;
    }
    return true;
 }
-
 
 /*-------------------------------------------------------------------------------------------------*/
    
