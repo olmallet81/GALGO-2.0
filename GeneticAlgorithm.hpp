@@ -45,7 +45,7 @@ public:
    T SP = 1.5;        // selective pressure for RSP selection method 
    T tolerance = 0.0; // terminal condition (inactive if equal to zero)
                  
-   int elitpop = 10;  // elit population size
+   int elitpop = 1;   // elit population size
    int matsize;       // mating pool size, set to popsize by default
    int tntsize = 10;  // tournament size
    int genstep = 10;  // generation step for outputting results
