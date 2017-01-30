@@ -27,7 +27,7 @@ std::vector<T> MyConstraint(const std::vector<T>& x)
 
 int main()
 {
-   // lower bound LB and upper bound UB
+   // lower bounds LB and upper bounds UB
    std::vector<double> LB({0.0,0.0});
    std::vector<double> UB({1.0,13.0});
 
