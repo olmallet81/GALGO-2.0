@@ -16,8 +16,10 @@ class GeneticAlgorithm
    template <typename K, int S>
    friend class Chromosome;
 
-public:
+private:
    Population<T,N> pop;       // population of chromosomes
+
+public:
    std::vector<T> lowerBound; // parameter(s) lower bound
    std::vector<T> upperBound; // parameter(s) upper bound
    std::vector<T> initialSet; // initial set or parameter(s)
