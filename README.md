@@ -18,7 +18,7 @@ The estimated parameter accuracy will be:
 ```
 accuracy = (maxY - minY) / MAXVAL
 ```
-If the chosen number of bits N is large the algorithm will struggle to achieve fast convergence as the number of possible solutions within the boundaries will be too great, on the contrary, if it is too small the algorithm will struggle to find the global extremum and risk to quickly stall on a local extremum due to the lack of diversity in the population.
+If the chosen number of bits N is large the algorithm will struggle to achieve fast convergence as the number of possible solutions within the boundaries will be too great, on the contrary, if it is too small the algorithm will struggle to find the global extremum and risk to quickly stall on a local extremum due to the lack of diversity in the chromosome population.
 
 
 # Evolution
