@@ -24,7 +24,6 @@ std::vector<T> MyConstraint(const std::vector<T>& x)
    return std::vector<T>({x[0]*x[1]+x[0]-x[1]+1.5,10-x[0]*x[1]});
 }
 
-
 int main()
 {
    // lower bounds LB and upper bounds UB
