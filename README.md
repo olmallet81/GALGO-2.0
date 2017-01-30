@@ -2,9 +2,9 @@
 Genetic Algorithm in C++ STL with lower and upper bounds for constrained problems optimization.
 
 # Description
-GALGO is a C++ template library, headers only, designed to solve a problem under constraints (or not) by maximizing or minimizing an objective function on given boundaries. It does not use any external C++ library, only the Standard Template Library. GALGO is fast and can use parallelism when required through OpenMP. GALGO is flexible and has been written in a way to allow the user to easily add new functionalities to the genetic algorithm. This library already contains some methods for selection, cross-over and mutation among the most widely used. The user can choose among these pre-existing methods to build a genetic algorithm or create new ones.
+GALGO is a C++ template library, headers only, designed to solve a problem under constraints (or not) by maximizing or minimizing an objective function on given boundaries. It does not use any external C++ library, only the Standard Template Library. GALGO is fast and can use parallelism when required through OpenMP. GALGO is flexible and has been written in a way to allow the user to easily add new functionalities to the genetic algorithm. This library already contains some methods for selection, cross-over and mutation among the most widely used. The user can choose among pre-existing methods to build a genetic algorithm or can create new ones.
 
-## Encoding and Decoding Chromosomes
+# Encoding and Decoding Chromosomes
 This genetic algorithm is using chromosomes represented as a binary string of 0 and 1. When initializing a population of chromosome, a random unsigned integer, we will call it X, will be generated for each parameter to be estimated, X being inside the interval [0,MAXVAL] where MAXVAL is the greatest unsigned integer obtained for the chosen number of bits. If the chosen number of bits to represent a gene (encoded parameter) is N, we will have:
 ```
 MAXVAL = 2^N - 1
@@ -21,7 +21,9 @@ precision = (maxY - minY) / MAXVAL
 If the chosen number of bits N is large the algorithm will struggle to achieve fast convergence as the number of possible solutions will be too great, if it is too small the algorithm will struggle to find the global extremum and risk to quickly stall on a local extremum due to the lack of diversity in the possible solutions.
 
 
-The pre-existing methods are:
+# Evolution
+
+The pre-existing methods to evolve a chromosome population are:
 
 ## Selection methods
 - proportional roulette wheel selection (RWS)
