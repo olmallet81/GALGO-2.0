@@ -18,7 +18,7 @@ The precision of the solution will be:
 ```
 precision = (maxY - minY) / MAXVAL
 ```
-If the chosen number of bits N is large the algorithm will struggle to achieve convergence as the number of possible solutions will be greater, if it is too small the algorithm will struggle to find the global extremum and risk to quickly stall on a local extremum due to the lack of diversity in the possible solutions.
+If the chosen number of bits N is large the algorithm will struggle to achieve fast convergence as the number of possible solutions will be too great, if it is too small the algorithm will struggle to find the global extremum and risk to quickly stall on a local extremum due to the lack of diversity in the possible solutions.
 
 
 The pre-existing methods are:
