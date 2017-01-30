@@ -18,9 +18,9 @@ class GeneticAlgorithm
 
 public:
    Population<T,N> pop;       // population of chromosomes
-   std::vector<T> lowerBound; // parameters lower bound(s)
-   std::vector<T> upperBound; // parameters upper bound(s)
-   std::vector<T> initialSet; // initial set parameter(s)
+   std::vector<T> lowerBound; // parameters lower bound
+   std::vector<T> upperBound; // parameters upper bound
+   std::vector<T> initialSet; // initial set of parameters
 
 private:
    mutable std::uniform_int_distribution<uint64_t> udistrib; // generate uniform random unsigned long long integers
@@ -35,7 +35,7 @@ public:
    void (*CrossOver)(const Population<T,N>&, CHR<T,N>&, CHR<T,N>&) = P2XO;
    // mutation method functor initialized to single-point mutation 
    void (*Mutation)(CHR<T,N>&) = SPM;  
-   // adaptation method to constraint(s) functor                                        
+   // adaptation method to constraints functor                                        
    void (*Adaptation)(Population<T,N>& x) = nullptr; 
    // constraint(s) function functor                               
    std::vector<T> (*Constraint)(const std::vector<T>&) = nullptr; 
