@@ -25,3 +25,5 @@ The pre-existing methods are:
 - uniform mutation (UNM)
 
 GALGO also contains a default method for adaptation to constraints (DAC).
+
+By default GALGO is set to run without constraints and with RWS, P1XO and SPM.
