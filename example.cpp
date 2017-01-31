@@ -15,7 +15,7 @@ public:
    // NB: GALGO maximize by default so we will maximize -f(x,y)
 };
 
-// constraint example:
+// constraints example:
 // 1) x * y + x - y + 1.5 <= 0
 // 2) 10 - x * y <= 0
 template <typename T>
