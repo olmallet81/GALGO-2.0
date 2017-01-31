@@ -10,7 +10,7 @@ public:
    static std::vector<T> Objective(const std::vector<T>& x)
    {
       T obj = -(pow(1-x[0],2)+100*pow(x[1]-x[0]*x[0],2));
-      return std::vector<T>({obj});
+      return {obj};
    }
    // NB: GALGO maximize by default so we will maximize -f(x,y)
 };
@@ -21,7 +21,7 @@ public:
 template <typename T>
 std::vector<T> MyConstraint(const std::vector<T>& x)
 {
-   return std::vector<T>({x[0]*x[1]+x[0]-x[1]+1.5,10-x[0]*x[1]});
+   return {x[0]*x[1]+x[0]-x[1]+1.5,10-x[0]*x[1]};
 }
 
 int main()
