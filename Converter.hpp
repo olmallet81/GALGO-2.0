@@ -16,7 +16,7 @@ std::string GetBinary(uint64_t value)
 /*-------------------------------------------------------------------------------------------------*/
 
 // convert binary string to unsigned long long integer
-uint64_t GetValue(const std::string s)
+uint64_t GetValue(const std::string& s)
 {
    uint64_t value, x = 0;
    for (std::string::const_iterator it = s.begin(), end = s.end(); it != end; ++it) {
