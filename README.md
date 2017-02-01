@@ -13,7 +13,7 @@ This is the main class you need to instantiate to run a genetic algorithm.
    GeneticAlgorithm(Functor<T> Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int nbgen, bool output = false)
    ```
 With:
-   - *Objective* = objective function functor 
+   - *objective* = objective function (function to optimize) 
    - *popsize* = population size or number of chromosomes
    - *lowerBound* = vector containing the parameter(s) lower bound
    - *upperBound* = vector containing the parameter(s) upper bound
