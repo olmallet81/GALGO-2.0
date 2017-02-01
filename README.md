@@ -10,7 +10,7 @@ This is the class you need to instantiate to run a genetic algorithm, declared a
 
 ```C++
 namespace galgo {
-template <typename T, int N>
+template <typename T,int N>
 class GeneticAlgorithm;
 }
 ```
@@ -18,7 +18,7 @@ The template parameter T can be either float or double for the precision of the 
 
 ## Constructor
 ```C++
-GeneticAlgorithm(Functor<T> Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int nbgen, bool output = false);
+GeneticAlgorithm(Functor<T> Objective,int popsize,const std::vector<T>& lowerBound,const std::vector<T>& upperBound,int nbgen,bool output=false);
 ```
 With:
    - *objective* = objective function (function to optimize) 
