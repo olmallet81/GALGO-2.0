@@ -10,7 +10,7 @@ This is the class you need to instantiate to run a genetic algorithm, declared a
 
 ```C++
 namespace galgo {
-template <typename T, int N = 16>
+template <typename T, int N>
 class GeneticAlgorithm;
 }
 ```
