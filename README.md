@@ -185,4 +185,11 @@ NB: the random number generator being randomly seeded you will not get exactly t
 
 # What's next...
 
-I am currently working on a new version of this library that will be more flexible. It will allow optimization on parameters of different types (double, float, int) and of different number of bits. It will use template metaprogramming with variadic templates. 
+I am currently working on a new version of this library that will be more flexible. It will allow optimization on parameters of different types (double, float, int) and of different number of bits. It will use template metaprogramming with variadic templates. I have almost finished so it will be available very soon.
+
+# References
+
+For those who want to know more about the methods I have implemented for selection and adaptation to constraints here is the link to the documents I have used:
+- [TransformTransform Ranking: a New Method of Fitness Scaling in Genetic Algorithms](http://shura.shu.ac.uk/5638/1/AI2008.pdf)
+- [Constraint handling strategies in Genetic Algorithms](https://core.ac.uk/download/pdf/12039642.pdf?repositoryId=437)
+
