@@ -49,4 +49,13 @@ GALGO also contains a default method for adaptation to constraints (DAC).
 
 By default GALGO is set to run without constraints and with RWS, P1XO and SPM.
 
+# Example
 
+You can run the following example contained in the source file example.cpp by first compiling with the following command:
+```
+$ g++ -std=c++11 -O3 -Wall example.cpp -o run
+```
+and then running:
+```
+$ ./run
+```
