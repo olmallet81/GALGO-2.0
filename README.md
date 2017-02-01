@@ -182,3 +182,7 @@ NB: if the objective function is time consuming you can go parallel by compiling
 ```
 
 NB: the random number generator being randomly seeded you will not get exactly the same results.
+
+# What's next...
+
+I am currently working on a new version of this library that will be more flexible. It will allow optimization on parameters of different types (double, float, int) and of different number of bits. It will use template metaprogramming with variadic templates. 
