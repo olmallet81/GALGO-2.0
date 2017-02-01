@@ -10,12 +10,13 @@ This is the main class you need to instantiate to run a genetic algorithm.
 
 - ## Constructor
    ```C++
-   GeneticAlgorithm(Functor<T> Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, i   nt, bool output = false)
+   GeneticAlgorithm(Functor<T> Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int nbgen, bool output = false)
    ```
 With:
    - *popsize* = population size or number of chromosomes
    - *lowerBound* = vector containing the parameter(s) lower bound
    - *upperBound* = vector containing the parameter(s) upper bound
+   - *nbgen* = number of generations to run
    - *output* = control for outputting results (set to false by default)
 
 - ## Member variables (public)
