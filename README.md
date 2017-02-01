@@ -20,10 +20,12 @@ step = (maxY - minY) / MAXVAL
 ```
 Estimating this step value before running the genetic algorithm is of high importance as it will greatly influence its performance. If the chosen number of bits N is large the algorithm will struggle to achieve fast convergence as the number of possible solutions within the boundaries will be too great, on the contrary, if it is too small the algorithm will struggle to find the global extremum and risk to quickly stall on a local extremum due to the lack of diversity within the chromosome population.
 
+The functions to encode and decode the chromosomes are in the header Converter.hpp.
+
 
 # Evolution
 
-The pre-existing methods to evolve a chromosome population are:
+The pre-existing methods to evolve a chromosome population contained in the header Evolution.hpp are:
 
 ## Selection methods
 - proportional roulette wheel selection (RWS)
