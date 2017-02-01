@@ -47,9 +47,9 @@ The pre-existing methods to evolve a chromosome population contained in the head
 - single point mutation (SPM)
 - uniform mutation (UNM)
 
-GALGO also contains a default method for adaptation to constraints (DAC).
+GALGO also contains a default method for adaptation to constraint(s) (DAC).
 
-By default GALGO is set to run without constraints and with RWS, P1XO and SPM.
+By default GALGO is set to run with no constraint and with RWS, P1XO and SPM.
 
 
 # C++ template class GeneticAlgorithm 
