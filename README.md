@@ -52,7 +52,7 @@ GALGO also contains a default method for adaptation to constraint(s) (DAC).
 By default GALGO is set to run with no constraint and with RWS, P1XO and SPM.
 
 
-# C++ template class GeneticAlgorithm 
+# C++ template class *GeneticAlgorithm*
 
 This is the class you need to instantiate to run a genetic algorithm, declared and defined within the namespace galgo in the header GeneticAlgorithm.hpp. 
 
@@ -159,8 +159,9 @@ and then running:
 ```
 $ ./run
 ```
-
 In this example we have constructed a class called MyObjective containing the function to optimize, this does not have to be necessarily the case if you do not need a complex objective function needing more arguments than the vector of parameters only.
+
+NB: if the objective function is time consuming you can go parallel by compiling with the flag -fopenmp.
 
 ## Ouput
 
