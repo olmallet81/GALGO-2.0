@@ -19,7 +19,14 @@ With:
    - *upperBound* = vector containing the parameter(s) upper bound
    - *nbgen* = number of generations to run
    - *output* = control for outputting results (set to false by default)
-
+   
+- ## Member functors (public)
+   - *Selection* = for selection method
+   - *CrossOver* = for cross-over method
+   - *Mutation* = for mutation method 
+   - *Adaptation* = for adaptation to constaint method
+   - *Constraint* = for optimization contraint(s)
+  
 - ## Member variables (public)
    - *lowerBound* = vector containing the parameter(s) lower bound
    - *upperBound* = vector containing the parameter(s) upper bound
