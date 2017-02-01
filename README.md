@@ -174,3 +174,5 @@ In this example we have constructed a class called MyObjective containing the fu
  C1(x) = -0.00021
  C2(x) = -0.00338
 ```
+
+NB: the random number generator being randomly seeded you will not get exactly the same results.
