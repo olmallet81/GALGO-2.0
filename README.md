@@ -1,5 +1,5 @@
 # GALGO
-Genetic Algorithm in C++ STL with lower and upper bounds for constrained problems optimization.
+Genetic Algorithm in C++ STL with lower and upper bounds for constrained optimization.
 
 
 # Description
