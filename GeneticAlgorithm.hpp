@@ -237,14 +237,14 @@ void GeneticAlgorithm<T,N>::print() const
          if (nbparam > 1) {
             std::cout << std::to_string(i + 1);
          }
-         std::cout << " ="  << std::setw(10) << std::fixed << std::setprecision(precision) << bestParam[i] << " |";
+         std::cout << " = "  << std::setw(9) << std::fixed << std::setprecision(precision) << bestParam[i] << " |";
 	   }
       for (unsigned i = 0; i < bestResult.size(); ++i) {
 	      std::cout << " F";
          if (bestResult.size() > 1) {
             std::cout << std::to_string(i + 1);
          }
-         std::cout << "(x) =" << std::setw(13) << std::fixed << std::setprecision(precision) << bestResult[i];
+         std::cout << "(x) = " << std::setw(12) << std::fixed << std::setprecision(precision) << bestResult[i];
          if (i < bestResult.size() - 1) {
             std::cout << " |";
          } else {
