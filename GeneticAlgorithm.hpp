@@ -25,7 +25,7 @@ private:
 public:
    std::vector<T> lowerBound; // parameter(s) lower bound
    std::vector<T> upperBound; // parameter(s) upper bound
-   std::vector<T> initialSet; // initial set or parameter(s)
+   std::vector<T> initialSet; // initial set of parameter(s)
 
 private:
    mutable std::uniform_int_distribution<uint64_t> udistrib;   // generate uniform random unsigned long long integers
