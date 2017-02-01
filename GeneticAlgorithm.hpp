@@ -244,7 +244,7 @@ void GeneticAlgorithm<T,N>::print() const
          if (bestResult.size() > 1) {
             std::cout << std::to_string(i + 1);
          }
-         std::cout << "(x) =" << std::setw(12) << std::fixed << std::setprecision(precision) << bestResult[i];
+         std::cout << "(x) =" << std::setw(13) << std::fixed << std::setprecision(precision) << bestResult[i];
          if (i < bestResult.size() - 1) {
             std::cout << " |";
          } else {
