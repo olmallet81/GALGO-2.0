@@ -14,7 +14,7 @@ class GeneticAlgorithm
 ```
 The template parameter T can be either float or double for the precision of the solution returned. N is to the number of bits used to encode the chromosomes, set to 16 by default, it must be between 1 and 64.
 
-- ## Constructor
+## Constructor
    ```C++
    GeneticAlgorithm(Functor<T> Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int nbgen, bool output = false)
    ```
@@ -26,14 +26,14 @@ With:
    - *nbgen* = number of generations to run
    - *output* = control for outputting results (set to false by default)
    
-- ## Member functors (public)
+## Member functors (public)
    - *Selection* = for selection method
    - *CrossOver* = for cross-over method
    - *Mutation* = for mutation method 
    - *Adaptation* = for adaptation to constaint method
    - *Constraint* = for optimization contraint(s)
   
-- ## Member variables (public)
+## Member variables (public)
    - *lowerBound* = vector containing the parameter(s) lower bound
    - *upperBound* = vector containing the parameter(s) upper bound
    - *initialSet* = vector containing the parameter(s) starting point (empty by default)
@@ -47,7 +47,7 @@ With:
    - *genstep* = generation step for outputting results (set to 10 by default)
    - *precision* = number of decimals for outputting results (set to 5 by default)
    
-- ## Member functions (public)
+## Member functions (public)
    - *run()* for running the genetic algorithm
    - *result()* for getting the population best chromosome
 
@@ -144,7 +144,7 @@ int main()
 }
 ```
 
-- ## Compilation
+## Compilation
 
 You can run the example above contained in the source file example.cpp by first compiling with the following command:
 ```
@@ -157,7 +157,7 @@ $ ./run
 
 In this example we have constructed a class called MyObjective containing the function to optimize, this does not have to be necessarily the case if you do not need a complex objective function needing more arguments than the vector of parameters only.
 
-- ## Ouput
+## Ouput
 
 ```
 
