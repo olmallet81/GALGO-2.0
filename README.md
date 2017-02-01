@@ -16,7 +16,7 @@ X will be then converted into a binary string of 0 and 1, the binary string will
 Y = minY + (X / MAXVAL) * (maxY - minY)
 ```
 This method of generating a random ratio rather than a random real number allows to achieve faster convergence as only values inside the boundaries [minY,maxY] will be generated when initializing the chromosome population but also when recombining and mutating them.
-The step between two successive parameter values within the boundaries will be:
+The step between two consecutive parameter values within the boundaries will be:
 ```
 step = (maxY - minY) / MAXVAL
 ```
