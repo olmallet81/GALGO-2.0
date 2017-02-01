@@ -10,14 +10,14 @@ This is the class you need to instantiate to run a genetic algorithm, declared a
 
 ```C++
 template <typename T, int N = 16>
-class GeneticAlgorithm
+class GeneticAlgorithm;
 ```
 The template parameter T can be either float or double for the precision of the solution returned. N is to the number of bits used to encode the chromosomes, set to 16 by default, it must be between 1 and 64.
 
 ## Constructor
-   ```C++
-   GeneticAlgorithm(Functor<T> Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int nbgen, bool output = false)
-   ```
+```C++
+GeneticAlgorithm(Functor<T> Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int nbgen, bool output = false);
+```
 With:
    - *objective* = objective function (function to optimize) 
    - *popsize* = population size or number of chromosomes
