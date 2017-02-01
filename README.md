@@ -144,6 +144,8 @@ int main()
 }
 ```
 
+- ## Compilation
+
 You can run the example above contained in the source file example.cpp by first compiling with the following command:
 ```
 $ g++ -std=c++11 -O3 -Wall example.cpp -o run
@@ -156,6 +158,7 @@ $ ./run
 In this example we have constructed a class called MyObjective containing the function to optimize, this does not have to be necessarily the case if you do not need a complex objective function needing more arguments than the vector of parameters only.
 
 - ## Ouput
+
 ```
 
  Running Genetic Algorithm...
