@@ -9,16 +9,18 @@ GALGO is a C++ template library, headers only, designed to solve a problem under
 This is the main class you need to instantiate to run a genetic algorithm.
 
 - ## Constructor
-```C++
-GeneticAlgorithm(Functor<T> Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int, bool output = false)
-```
+   ```C++
+   GeneticAlgorithm(Functor<T> Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, i   nt, bool output = false)
+   ```
 With:
    - *popsize* = population size or number of chromosomes
-   - *lowerBound* = vector containing the parameter(s) lower bound (public member variable)
-   - *upperBound* = vector containing the parameter(s) upper bound (public member variable)
+   - *lowerBound* = vector containing the parameter(s) lower bound
+   - *upperBound* = vector containing the parameter(s) upper bound
    - *output* = control for outputting results (set to false by default)
 
 - ## Member variables (public)
+   - *lowerBound* = vector containing the parameter(s) lower bound
+   - *upperBound* = vector containing the parameter(s) upper bound
    - *initialSet* = vector containing the parameter(s) starting point (empty by default)
    - *covrate* = cross-over rate between 0 and 1 (set to 0.5 by default)
    - *mutrate* = mutation rate between 0 and 1 (set to 0.05 by default)
