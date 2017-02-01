@@ -6,7 +6,7 @@ GALGO is a C++ template library, headers only, designed to solve a problem under
 
 # Template class GeneticAlgorithm
 
-This is the main class you need to instantiate to run a genetic algorithm, declared and defined in the header GeneticAlgorithm.hpp. 
+This is the main class you need to instantiate to run a genetic algorithm, declared and defined within the namespace galgo in the header GeneticAlgorithm.hpp. 
 
 ```C++
 template <typename T, int N = 16>
