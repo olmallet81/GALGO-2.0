@@ -52,7 +52,7 @@ GALGO also contains a default method for adaptation to constraints (DAC).
 By default GALGO is set to run without constraints and with RWS, P1XO and SPM.
 
 
-# GeneticAlgorithm template class
+# C++ template class GeneticAlgorithm 
 
 This is the class you need to instantiate to run a genetic algorithm, declared and defined within the namespace galgo in the header GeneticAlgorithm.hpp. 
 
