@@ -57,7 +57,7 @@ public:
    GeneticAlgorithm() {}
    // constructor
    template <typename Functor>
-   GeneticAlgorithm(Functor&& Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int, bool output = false);
+   GeneticAlgorithm(Functor Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int, bool output = false);
    // run genetic algorithm
    void run();
    // return best chromosome 
@@ -80,7 +80,7 @@ private:
    
 // constructor
 template <typename T, int N> template <typename Functor>
-GeneticAlgorithm<T,N>::GeneticAlgorithm(Functor&& Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int nbgen, bool output)
+GeneticAlgorithm<T,N>::GeneticAlgorithm(Functor Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int nbgen, bool output)
 {
    this->Objective = Objective;
    this->nbparam = upperBound.size();
