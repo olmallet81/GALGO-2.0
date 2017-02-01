@@ -160,7 +160,6 @@ In this example we have constructed a class called MyObjective containing the fu
 ## Ouput
 
 ```
-
  Running Genetic Algorithm...
  ----------------------------
  Generation =  0 | X1 =   0.22918 | X2 =  12.61854 | F(x) =-15791.07606
@@ -174,5 +173,4 @@ In this example we have constructed a class called MyObjective containing the fu
  -------------
  C1(x) = -0.00021
  C2(x) = -0.00338
-
 ```
