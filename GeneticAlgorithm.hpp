@@ -59,7 +59,7 @@ public:
    // nullary constructor
    GeneticAlgorithm() {}
    // constructor
-   GeneticAlgorithm(Functor<T> Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int, bool output = false);
+   GeneticAlgorithm(Functor<T> Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int nbgen, bool output = false);
    // run genetic algorithm
    void run();
    // return best chromosome 
