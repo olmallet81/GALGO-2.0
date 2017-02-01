@@ -168,12 +168,12 @@ NB: if the objective function is time consuming you can go parallel by compiling
 ```
  Running Genetic Algorithm...
  ----------------------------
- Generation =  0 | X1 =   0.22918 | X2 =  12.61854 | F(x) =-15791.07606
- Generation = 10 | X1 =   0.81093 | X2 =  12.39359 | F(x) =-13773.38448
- Generation = 20 | X1 =   0.81209 | X2 =  12.38605 | F(x) =-13751.28199
- Generation = 30 | X1 =   0.81201 | X2 =  12.33666 | F(x) =-13635.97220
- Generation = 40 | X1 =   0.81212 | X2 =  12.31742 | F(x) =-13590.66665
- Generation = 50 | X1 =   0.81224 | X2 =  12.31583 | F(x) =-13586.50453
+ Generation =  0 | X1 =   0.22918 | X2 =  12.61854 | F(x) = -15791.07606
+ Generation = 10 | X1 =   0.81093 | X2 =  12.39359 | F(x) = -13773.38448
+ Generation = 20 | X1 =   0.81209 | X2 =  12.38605 | F(x) = -13751.28199
+ Generation = 30 | X1 =   0.81201 | X2 =  12.33666 | F(x) = -13635.97220
+ Generation = 40 | X1 =   0.81212 | X2 =  12.31742 | F(x) = -13590.66665
+ Generation = 50 | X1 =   0.81224 | X2 =  12.31583 | F(x) = -13586.50453
 
  Constraint(s)
  -------------
