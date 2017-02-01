@@ -55,7 +55,9 @@ public:
    int tntsize = 10;  // tournament size
    int genstep = 10;  // generation step for outputting results
    int precision = 5; // precision for outputting results
-
+	
+   // nullary constructor
+   GeneticAlgorithm() {}
    // constructor
    GeneticAlgorithm(Functor<T> Objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int, bool output = false);
    // run genetic algorithm
