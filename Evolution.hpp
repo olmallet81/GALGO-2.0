@@ -1,5 +1,12 @@
+//=================================================================================================
+//                    Copyright (C) 2016 Olivier Mallet - All Rights Reserved                      
+//=================================================================================================
+
 #ifndef EVOLUTION_HPP
 #define EVOLUTION_HPP
+
+// In this header, the user can define his own selection, cross-over, mutation and adaptation to 
+// constraint(s) methods by respecting the function declaration template.
 
 //=================================================================================================
 
