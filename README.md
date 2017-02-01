@@ -2,10 +2,10 @@
 Genetic Algorithm in C++ STL with lower and upper bounds for constrained problems optimization.
 
 # Description
-GALGO is a C++ template library, headers only, designed to solve a problem under constraints (or not) by maximizing or minimizing an objective function on given boundaries. It does not use any external C++ library, only the Standard Template Library. GALGO is fast and can use parallelism when required through OpenMP. GALGO is flexible and has been written in a way to allow the user to easily add new functionalities to the genetic algorithm. This library already contains some methods for selection, cross-over and mutation among the most widely used. The user can choose among pre-existing methods to build a genetic algorithm or can create new ones.
+GALGO is a C++ template library, headers only, designed to solve a problem under constraints (or not) by maximizing or minimizing an objective function on given boundaries. GALGO can also achieve multi-objective optimization. It does not use any external C++ library, only the Standard Template Library. GALGO is fast and can use parallelism when required through OpenMP. GALGO is flexible and has been written in a way allowing the user to easily add new methods to the genetic algorithm. This library already contains some methods for selection, cross-over and mutation among the most widely used. The user can choose among these pre-existing methods or create new ones.
 
 # Encoding and Decoding Chromosomes
-GALGO is based on chromosomes represented as a binary string of 0 and 1. The user is free to choose the number of bits N used to encode each parameter (or gene) composing a chromosome within the interval [1,64]. When initializing a population of chromosomes, a random unsigned integer, we will call it X, will be generated for each parameter to be estimated, X being inside the interval [0,MAXVAL] where MAXVAL is the greatest unsigned integer obtained for the chosen number of bits. If the chosen number of bits to represent a gene is N, we will have:
+GALGO is based on chromosomes represented as a binary string of 0 and 1 containing the encoded parameters to be estimated. The user is free to choose the number of bits N to encode the parameters (or genes) composing a chromosome within the interval [1,64]. When initializing a population of chromosomes, a random 64 bits unsigned integer, we will call it X, will be generated for each parameter to be estimated, X being inside the interval [0,MAXVAL] where MAXVAL is the greatest unsigned integer obtained for the chosen number of bits. If the chosen number of bits to represent a gene is N, we will have:
 ```
 MAXVAL = 2^N - 1
 ```
@@ -14,7 +14,7 @@ X will be then converted into a binary string of 0 and 1, the binary string will
 Y = minY + (X / MAXVAL) * (maxY - minY)
 ```
 This method of generating a random ratio rather than a random real number allows to achieve faster convergence as only values inside the boundaries [minY,maxY] will be generated when initializing the chromosome population but also when recombining and mutating them.
-The step between to successive parameter values within the boundaries will be:
+The step between two successive parameter values within the boundaries will be:
 ```
 step = (maxY - minY) / MAXVAL
 ```
