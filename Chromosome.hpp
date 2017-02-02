@@ -69,11 +69,11 @@ private:
    std::vector<T> param;                       // estimated parameters
    std::vector<T> result;                      // chromosome objective function(s) result
    std::string chr;                            // string of bits representing chromosome
+   const GeneticAlgorithm<T,N>* ptr = nullptr; // pointer to genetic algorithm
 public:
    T fitness;                                  // chromosome fitness, objective function(s) result that can be modified (adapted to constraint(s), set to positive values, etc...)
 private:
    T total;                                    // total sum of objective function(s) result
-   const GeneticAlgorithm<T,N>* ptr = nullptr; // pointer to genetic algorithm
    int chrsize;                                // chromosome size (in number of bits)
    int numgen;                                 // numero of generation
 };
