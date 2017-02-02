@@ -45,7 +45,7 @@ public:
    // mutation method functor initialized to single-point mutation 
    void (*Mutation)(CHR<T,N>&) = SPM;  
    // adaptation to constraint(s) method functor                                        
-   void (*Adaptation)(Population<T,N>& x) = nullptr; 
+   void (*Adaptation)(Population<T,N>&) = nullptr; 
    // constraint(s) functor                               
    std::vector<T> (*Constraint)(const std::vector<T>&) = nullptr; 
 
