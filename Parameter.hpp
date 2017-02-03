@@ -23,9 +23,13 @@ int sum(int first, Args...args)
 }
 
 /*-------------------------------------------------------------------------------------------------*/
+   
 template <typename T, int N = 16>
 class Parameter
 {
+   template <typename K, int...S>
+   friend class Chromosome;
+
 public:
    std::vector<T> data; // contains lower bound, upper bound and initial value (optional)
    // nullary constructor
@@ -34,6 +38,7 @@ public:
    Parameter(const std::vector<T>& data) {
       this->data = data;
    }
+private:
    // encoding random unsigned integer
    std::string encode() const {
       // generating and encoding a random unsigned integer
