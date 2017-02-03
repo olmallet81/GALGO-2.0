@@ -15,9 +15,6 @@ class Population
    static_assert(std::is_same<float,T>::value || std::is_same<double,T>::value, "variable type can only be float or double, please amend.");
    static_assert(N > 0 && N <= 64, "number of bits cannot be ouside interval [1,64], please choose an integer within this interval.");
 
-   template <typename K, int S>
-   friend class GeneticAlgorithm;
-
 public: 
    // nullary constructor
    Population() {}
