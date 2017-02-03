@@ -56,12 +56,12 @@ This is the class you need to instantiate to run a genetic algorithm, declared a
 
 ```C++
 namespace galgo {
-template <typename T,int...N>
-class GeneticAlgorithm;
+   template <typename T,int...N>
+   class GeneticAlgorithm;
 }
 ```
 The template parameter T can be either float or double for the precision of the solution returned. N is the number of bits used to encode the chromosomes, set to 16 by default, it must be between 1 and 64.
-The template parameter N in the version 1.0 has been replaced by a parameter pack to allow each parameter to be encoded using a different number of bits.
+The template parameter N in the version 1.0 has been replaced by a parameter pack to allow each parameter to be encoded using a different number of bits. 
 
 ## Constructor
 ```C++
