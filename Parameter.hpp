@@ -27,8 +27,6 @@ int sum(int first, Args...args)
 template <typename T, int N = 16>
 class Parameter
 {
-   static_assert(N > 0 && N <= 64, "in class Parameter, template parameter N (number of bits) cannot be ouside interval [1,64], please choose an integer within this interval.");
-
 public:
    std::vector<T> x; // contains lower bound, upper bound and initial value (optional)
    // nullary constructor
