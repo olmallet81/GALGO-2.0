@@ -100,20 +100,19 @@ Population<T,N>::Population(const GeneticAlgorithm<T,N>& ga)
 template <typename T, int N>
 void Population<T,N>::creation()
 {
+   int start = 0;
    // initializing first chromosome
-   curpop[0] = std::make_shared<Chromosome<T,N>>(*ptr);
    if (!ptr->initialSet.empty()) {
+      curpop[0] = std::make_shared<Chromosome<T,N>>(*ptr);
       curpop[0]->initialize();
-   } else {
-      curpop[0]->create();
+      curpop[0]->evaluate();
+      start++;
    }
-   curpop[0]->evaluate();
-
    // getting the rest
    #ifdef _OPENMP 
    #pragma omp parallel for num_threads(MAX_THREADS)
    #endif
-   for (int i = 1; i < ptr->popsize; ++i) {
+   for (int i = start; i < ptr->popsize; ++i) {
       curpop[i] = std::make_shared<Chromosome<T,N>>(*ptr);
       curpop[i]->create();
       curpop[i]->evaluate();
