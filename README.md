@@ -66,7 +66,7 @@ The template parameter T can be either float or double for the precision of the 
 template <typename T, int N>
 Parameter(const std::vector<T>& data);
 ```
-## Member variables (public)
+## Member variable (public)
    - *data* = std::vector containing the parameter lower and upper bounds and an initial value if required
 
 
