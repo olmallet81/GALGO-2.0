@@ -54,7 +54,7 @@ inline T uniform(T min, T max)
 template <int N>
 class Randomize
 {
-   static_assert(N > 0 && N <= 64, "in class galgo::Randomize, template parameter N cannot be ouside interval [1,64], please choose an integer within this interval.");
+   static_assert(N > 0 && N <= 64, "in class galgo::Randomize<N>, template parameter N cannot be ouside interval [1,64], please choose an integer within this interval.");
     
 public:
    // computation only done once for each different N
