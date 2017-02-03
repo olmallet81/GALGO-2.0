@@ -113,7 +113,7 @@ GeneticAlgorithm<T,N...>::init()
    const auto& par = std::get<I>(tp);
    lowerBound.push_back(par.data[0]);
    upperBound.push_back(par.data[1]);
-   if (par.x.size() > 2) {
+   if (par.data.size() > 2) {
       initialSet.push_back(par.data[2]);
    }
    init<I + 1>();
