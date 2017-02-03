@@ -1,4 +1,4 @@
-# GALGO
+# GALGO-2.0
 Genetic Algorithm in C++ STL with lower and upper bounds for constrained optimization.
 
 
@@ -7,7 +7,7 @@ GALGO is a C++ template library, headers only, designed to solve a problem under
 
 
 # Encoding and Decoding Chromosomes
-GALGO is based on chromosomes represented as a binary string of 0 and 1 containing the encoded parameters to be estimated. The user is free to choose the number of bits N to encode the parameters (or genes) composing a chromosome within the interval [1,64]. When initializing a population of chromosomes, a random 64 bits unsigned integer, we will call it X, will be generated for each parameter to be estimated, X being inside the interval [0,MAXVAL] where MAXVAL is the greatest unsigned integer obtained for the chosen number of bits. If the chosen number of bits to represent a gene is N, we will have:
+GALGO is based on chromosomes represented as a binary string of 0 and 1 containing the encoded parameters to be estimated. The user is free to choose the number of bits N to encode each one of the parameters (or genes) composing a chromosome within the interval [1,64]. In the previous version of this library, this number had to be the same for all parameters to be estimated, in the new version 2.0 they can be encoded using a different number of bits. When initializing a population of chromosomes, a random 64 bits unsigned integer, we will call it X, will be generated for each parameter to be estimated, X being inside the interval [0,MAXVAL] where MAXVAL is the greatest unsigned integer obtained for the chosen number of bits. If the chosen number of bits to represent a gene is N, we will have:
 ```
 MAXVAL = 2^N - 1
 ```
@@ -58,11 +58,12 @@ This is the class you need to instantiate to run a genetic algorithm, declared a
 
 ```C++
 namespace galgo {
-template <typename T,int N>
+template <typename T,int...N>
 class GeneticAlgorithm;
 }
 ```
 The template parameter T can be either float or double for the precision of the solution returned. N is to the number of bits used to encode the chromosomes, set to 16 by default, it must be between 1 and 64.
+The template parameter N in the version 1.0 has been replaced by a parameter pack to allow each parameter to be encoded using a different number of bits.
 
 ## Constructor
 ```C++
@@ -134,13 +135,17 @@ std::vector<T> MyConstraint(const std::vector<T>& x)
 
 int main()
 {
-   // defining lower bound LB and upper bound UB
-   std::vector<double> LB({0.0,0.0});
-   std::vector<double> UB({1.0,13.0});
+   // initializing parameters
+   galgo::Parameter<double> par1({0.0,1.0});   
+   galgo::Parameter<double> par2({0.0,13.0});
+   // encoded on 16 bits by default but this value can be modified
 
    // initiliazing genetic algorithm
-   galgo::GeneticAlgorithm<double> ga(MyObjective<double>::Objective,100,LB,UB,50,true);
- 
+   galgo::GeneticAlgorithm<double,16,16> ga(MyObjective<double>::Objective,100,par1,par2,50,true);
+   // NB: GeneticAlgorithm template arguments have to match the one used for the parameters
+   // for example if par1 was of type Parameter<double,20> and par2 of type Parameter<double,32> 
+   // then ga would need to be of type GeneticAlgorithm<double,20,32>, the order has to be respected.
+
    // setting constraints
    ga.Constraint = MyConstraint;
 
