@@ -1,4 +1,4 @@
-# GALGO
+# GALGO 1.0
 Genetic Algorithm in C++ STL with lower and upper bounds for constrained optimization.
 
 
