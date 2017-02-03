@@ -71,8 +71,7 @@ GeneticAlgorithm(Functor<T> Objective,int popsize,const Parameter<T,N>&...args,i
 With:
    - *objective* = objective function (function to optimize) 
    - *popsize* = population size or number of chromosomes
-   - *lowerBound* = vector containing the parameter(s) lower bound
-   - *upperBound* = vector containing the parameter(s) upper bound
+   - *Parameter* = template class containing parameter(s) lower and upper bound and initial value if required
    - *nbgen* = number of generations to run
    - *output* = control for outputting results (set to false by default)
    
@@ -84,9 +83,6 @@ With:
    - *Constraint* = for optimization contraint(s)
   
 ## Member variables (public)
-   - *lowerBound* = vector containing the parameter(s) lower bound
-   - *upperBound* = vector containing the parameter(s) upper bound
-   - *initialSet* = vector containing the parameter(s) starting point (empty by default)
    - *covrate* = cross-over rate between 0 and 1 (set to 0.5 by default)
    - *mutrate* = mutation rate between 0 and 1 (set to 0.05 by default)
    - *SP* = selective pressure, for RSP selection method only, between 1 and 2 (set to 1.5 by default)
@@ -100,6 +96,8 @@ With:
 ## Member functions (public)
    - *run()* for running the genetic algorithm
    - *result()* for getting the population best chromosome
+   
+NB: in the previous version the user had access to the parameter(s) lower bound, upper bound and initial set, they are now private inside *GeneticAlgorithm* class as these values are set when declaring an object using the *Parameter* class. They can be modified at any time once the parameter(s) declared as they are contained inside a public vector.
 
 # Example
 
