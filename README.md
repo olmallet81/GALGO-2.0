@@ -66,7 +66,7 @@ The template parameter N in the version 1.0 has been replaced by a parameter pac
 
 ## Constructor
 ```C++
-GeneticAlgorithm(Functor<T> Objective,int popsize,const std::vector<T>& lowerBound,const std::vector<T>& upperBound,int nbgen,bool output=false);
+GeneticAlgorithm(Functor<T> Objective,int popsize,const Parameter<T,N>&...args,int nbgen,bool output=false);
 ```
 With:
    - *objective* = objective function (function to optimize) 
