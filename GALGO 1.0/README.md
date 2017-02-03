@@ -65,6 +65,7 @@ The template parameter T can be either float or double for the precision of the 
 
 ## Constructor
 ```C++
+template <typename T, int N>
 GeneticAlgorithm(Functor<T> Objective,int popsize,const std::vector<T>& lowerBound,const std::vector<T>& upperBound,int nbgen,bool output=false);
 ```
 With:
