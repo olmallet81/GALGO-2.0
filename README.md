@@ -2,10 +2,10 @@
 Genetic Algorithm in C++ STL with lower and upper bounds for constrained optimization.
 
 # Description
-GALGO is a C++ template library, headers only, designed to solve a problem under constraints (or not) by maximizing or minimizing an objective function on given boundaries. GALGO can also achieve multi-objective optimization. It does not use any external C++ library, only the Standard Template Library. GALGO is fast and can use parallelism when required through OpenMP. GALGO is flexible and has been written in a way allowing the user to easily add new methods to the genetic algorithm. This library already contains some methods for selection, cross-over and mutation among the most widely used. The user can choose among these pre-existing methods or create new ones. 
+GALGO is a C++ template library, headers only, designed to solve a problem under constraints (or not) by maximizing or minimizing an objective function on given boundaries. GALGO can also achieve multi-objective optimization. It does not use any external C++ library, only the Standard Template Library. GALGO is fast and can use parallelism when required through OpenMP. GALGO is flexible and has been written in a way allowing the user to easily add new methods to the genetic algorithm. This library already contains some methods for selection, cross-over and mutation among the most widely used. The user can choose among these pre-existing methods or create new ones. The new version of this library (2.0) is using metaprogramming with variadic templates to allow the user to encode each one of the parameters to be estimated with a different number of bits.
 
 # Encoding and Decoding Chromosomes
-GALGO is based on chromosomes represented as a binary string of 0 and 1 containing the encoded parameters to be estimated. The user is free to choose the number of bits N to encode each one of the parameters (or genes) composing a chromosome within the interval [1,64]. In the previous version of this library, this number had to be the same for all parameters to be estimated, in the new version 2.0 they can be encoded using a different number of bits. When initializing a population of chromosomes, a random 64 bits unsigned integer, we will call it X, will be generated for each parameter to be estimated, X being inside the interval [0,MAXVAL] where MAXVAL is the greatest unsigned integer obtained for the chosen number of bits. If the chosen number of bits to represent a gene is N, we will have:
+GALGO is based on chromosomes represented as a binary string of 0 and 1 containing the encoded parameters to be estimated. The user is free to choose the number of bits N to encode each one of them within the interval [1,64]. In the previous version of this library, this number had to be the same for all parameters to be estimated, in the new version 2.0 they can be encoded using a different number of bits. When initializing a population of chromosomes, a random 64 bits unsigned integer, we will call it X, will be generated for each parameter to be estimated, X being inside the interval [0,MAXVAL] where MAXVAL is the greatest unsigned integer obtained for the chosen number of bits. If the chosen number of bits to represent a gene is N, we will have:
 ```
 MAXVAL = 2^N - 1
 ```
@@ -70,7 +70,7 @@ GeneticAlgorithm(Functor<T> Objective,int popsize,const Parameter<T,N>&...args,i
 With:
    - *objective* = objective function (function to optimize) 
    - *popsize* = population size or number of chromosomes
-   - *Parameter* = template class containing parameter(s) lower and upper bound and initial value if required
+   - *Parameter* = template class containing parameter(s) lower and upper bound and initial value if required (the parameter pack allows to instantiate the genetic algorithms using an arbitrary number of objects of type *Parameter*
    - *nbgen* = number of generations to run
    - *output* = control for outputting results (set to false by default)
    
