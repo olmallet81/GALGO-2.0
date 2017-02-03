@@ -97,7 +97,7 @@ With:
    - *run()* for running the genetic algorithm
    - *result()* for getting the population best chromosome
    
-NB: in the previous version the user had access to the parameter(s) lower bound, upper bound and initial set, they are now private inside *GeneticAlgorithm* class as these values are set when declaring an object using the *Parameter* class. They can be modified at any time once the parameter(s) declared as they are contained inside a public vector.
+NB: in the previous version the user had access to the parameter(s) lower bound, upper bound and initial set, they are now private inside *GeneticAlgorithm* class as these values are set when declaring an object using *Parameter* class. They can be modified at any time once the parameter(s) declared as they are contained inside a public vector.
 
 # Example
 
