@@ -122,7 +122,7 @@ bool GeneticAlgorithm<T,N>::check() const
    }
    for (int i = 0; i < nbparam; ++i) {
       if (lowerBound[i] >= upperBound[i]) {
-         std::cerr << " Error: in class galgo::GeneticAlgorithm<T>, lower bound (lowerBound) cannot be greater than upper bound (upperBound), please amend.\n";
+         std::cerr << " Error: in class galgo::GeneticAlgorithm<T>, lower bound (lowerBound) cannot be equal or greater than upper bound (upperBound), please amend.\n";
          return false;
       }
    }
