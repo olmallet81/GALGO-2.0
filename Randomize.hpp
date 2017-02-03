@@ -9,6 +9,22 @@ namespace galgo {
 
 //=================================================================================================
     
+// template metaprogramming for getting maximum unsigned integral value from N bits
+template <unsigned int N>
+struct MAXVALUE 
+{
+    enum : uint64_t{ value = 2 * MAXVALUE<N - 1>::value };
+};
+
+// template specialization for initial case N = 0
+template <>
+struct MAXVALUE<0> 
+{
+    enum { value = 1 };
+}; 
+
+/*-------------------------------------------------------------------------------------------------*/
+    
 // Mersenne Twister 19937 pseudo-random number generator
 std::random_device rand_dev;
 std::mt19937_64 rng(rand_dev());
