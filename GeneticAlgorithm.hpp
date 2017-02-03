@@ -32,8 +32,8 @@ public:
    std::vector<T> initialSet; // initial set of parameter(s)
 
 private:
-   mutable std::uniform_int_distribution<uint64_t> udistrib;   // generate uniform random unsigned long long integers
-   static constexpr uint64_t MAXVAL = pow(2, N) - 1;           // maximum unsigned integral value obtained from N bits, evaluated at compile time
+   mutable std::uniform_int_distribution<uint64_t> udistrib;  // generate uniform random unsigned long long integers
+   static constexpr uint64_t MAXVAL = MAXVALUE<N>::value - 1; // maximum unsigned integral value obtained from N bits, evaluated at compile time
   
 public: 
    // objective function functor
