@@ -23,17 +23,16 @@ int sum(int first, Args...args)
 }
 
 /*-------------------------------------------------------------------------------------------------*/
-
 template <typename T, int N = 16>
 class Parameter
 {
 public:
-   std::vector<T> x; // contains lower bound, upper bound and initial value (optional)
+   std::vector<T> data; // contains lower bound, upper bound and initial value (optional)
    // nullary constructor
    Parameter() {}
    // constructor
-   Parameter(const std::vector<T>& x) {
-      this->x = x;
+   Parameter(const std::vector<T>& data) {
+      this->data = data;
    }
    // encoding random unsigned integer
    std::string encode() const {
@@ -45,7 +44,7 @@ public:
    // encoding known unsigned integer
    std::string encode(T z) const {
       // converting known value to unsigned integer
-      uint64_t value = Randomize<N>::MAXVAL * (z - x[0]) / (x[1] - x[0]);
+      uint64_t value = Randomize<N>::MAXVAL * (z - data[0]) / (data[1] - data[0]);
       // encoding it into a string
       std::string str = GetBinary(value);
       // truncating string to desired number of bits N
@@ -53,7 +52,7 @@ public:
    }
    // decoding string to real value
    T decode(const std::string& str) const {
-      return x[0] + (galgo::GetValue(str) / (double)Randomize<N>::MAXVAL) * (x[1] - x[0]);
+      return data[0] + (galgo::GetValue(str) / (double)Randomize<N>::MAXVAL) * (data[1] - data[0]);
    }
    // return encoded parameter size in number of bits 
    T size() const {
