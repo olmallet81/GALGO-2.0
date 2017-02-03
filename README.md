@@ -65,12 +65,13 @@ The template parameter N in the version 1.0 has been replaced by a parameter pac
 
 ## Constructor
 ```C++
+template <typename T, int...N>
 GeneticAlgorithm(Functor<T> Objective,int popsize,const Parameter<T,N>&...args,int nbgen,bool output=false);
 ```
 With:
    - *objective* = objective function (function to optimize) 
    - *popsize* = population size or number of chromosomes
-   - *Parameter* = template class containing parameter(s) lower and upper bound and initial value if required (the parameter pack allows to instantiate the genetic algorithms using an arbitrary number of objects of type *Parameter*
+   - *Parameter* = template class containing parameter(s) lower and upper bound and initial value if required (the parameter pack allows to instantiate the genetic algorithms using an arbitrary number of objects of type *Parameter*)
    - *nbgen* = number of generations to run
    - *output* = control for outputting results (set to false by default)
    
