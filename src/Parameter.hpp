@@ -50,7 +50,7 @@ private:
       // generating and encoding a random unsigned integer
       std::string str = galgo::GetBinary(Randomize<N>::generate());
       // truncating string to desired number of bits N
-      return str.substr(str.size() - N, N);;
+      return str.substr(str.size() - N, N);
    }
    // encoding known unsigned integer
    std::string encode(T z) const {
@@ -59,7 +59,7 @@ private:
       // encoding it into a string
       std::string str = GetBinary(value);
       // truncating string to desired number of bits N
-      return str.substr(str.size() - N, N);;
+      return str.substr(str.size() - N, N);
    }
    // decoding string to real value
    T decode(const std::string& str) const {
