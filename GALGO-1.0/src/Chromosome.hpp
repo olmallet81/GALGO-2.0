@@ -66,7 +66,7 @@ public:
    const std::vector<T>& upperBound() const;
 
 private:
-   std::vector<T> param;                       // estimated parameters
+   std::vector<T> param;                       // estimated parameter(s)
    std::vector<T> result;                      // chromosome objective function(s) result
    std::string chr;                            // string of bits representing chromosome
    const GeneticAlgorithm<T,N>* ptr = nullptr; // pointer to genetic algorithm
