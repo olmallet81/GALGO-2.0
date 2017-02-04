@@ -90,7 +90,7 @@ GeneticAlgorithm(Functor<T> Objective,int popsize,const Parameter<T,N>&...args,i
 With:
    - *objective* = objective function (function to optimize) 
    - *popsize* = population size or number of chromosomes
-   - *Parameter* = template class containing parameter(s) lower and upper bound and initial value if required (the parameter pack allows to instantiate the genetic algorithms using an arbitrary number of objects of type *Parameter*)
+   - *...args* = parameters to be estimated (the parameter pack allows to instantiate the genetic algorithms using an arbitrary number of objects of type *Parameter*)
    - *nbgen* = number of generations to run
    - *output* = control for outputting results (set to false by default)
    
