@@ -27,8 +27,7 @@ struct MAXVALUE<0>
 
 // Mersenne Twister 19937 pseudo-random number generator
 std::random_device rand_dev;
-//std::mt19937_64 rng(rand_dev());
-std::mt19937_64 rng(0);
+std::mt19937_64 rng(rand_dev());
 
 // generate uniform random probability in range [0,1)
 std::uniform_real_distribution<> proba(0, 1);
