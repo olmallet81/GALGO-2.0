@@ -153,6 +153,7 @@ int main()
 {
    // initializing parameters lower and upper bounds
    // an initial value can be added if required after the upper bound
+   // example: {0.0,1.0,0.5} and {0.0,13.0,0.5}
    galgo::Parameter<double> par1({0.0,1.0});   
    galgo::Parameter<double> par2({0.0,13.0});
    // encoded on 16 bits by default but this value can be modified
