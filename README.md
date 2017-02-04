@@ -182,7 +182,10 @@ $ ./run
 ```
 In this example we have constructed a class called MyObjective containing the function to optimize, this does not have to be necessarily the case if you do not need a complex objective function needing more arguments than the vector of parameters only.
 
-NB: if the objective function is time consuming you can go parallel by compiling with the flag -fopenmp.
+If the objective function is time consuming you can go parallel by using OpenMP:
+```
+$ g++ -fopenmp -std=c++11 -O3 -Wall example.cpp -o run
+```
 
 ## Ouput
 
