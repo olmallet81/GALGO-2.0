@@ -129,12 +129,10 @@ void GeneticAlgorithm<T,N...>::check() const
       for (int i = 0; i < nbparam; ++i) {
          if (initialSet[i] < lowerBound[i] || initialSet[i] > upperBound[i]) {
             throw std::invalid_argument(" Error: in class galgo::Parameter<T,N>, initial parameter value cannot be outside the parameter boundaries, please choose a value between its lower and upper bounds.");
-            return false;
          }
       }
       if (initialSet.size() != (unsigned)nbparam) {
          throw std::invalid_argument(" Error: in class galgo::GeneticAlgorithm<T>, initial set of parameters does not have the same dimension than the number of parameters, please adjust.");
-         return false;
       }
    }
    if (SP < 1.0 || SP > 2.0) {
@@ -145,7 +143,6 @@ void GeneticAlgorithm<T,N...>::check() const
    }
    if (covrate < 0.0 || covrate > 1.0) {
       throw std::invalid_argument(" Error: in class galgo::GeneticAlgorithm<T>, cross-over rate (covrate) cannot outside [0.0,1.0], please choose a real value within this interval.");
-      return false;
    }
    if (genstep <= 0) {
       throw std::invalid_argument(" Error: in class galgo::GeneticAlgorithm<T>, generation step (genstep) cannot be <= 0, please choose an integral value > 0.");
