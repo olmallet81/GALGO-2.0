@@ -98,8 +98,8 @@ With:
    - *Selection* = for selection method
    - *CrossOver* = for cross-over method
    - *Mutation* = for mutation method 
-   - *Adaptation* = for adaptation to constaint method
-   - *Constraint* = for optimization contraint(s)
+   - *Adaptation* = for adaptation to constaint(s) method
+   - *Constraint* = for contraint(s) function
   
 ## Member variables (public)
    - *covrate* = cross-over rate between 0 and 1 (set to 0.5 by default)
