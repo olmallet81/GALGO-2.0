@@ -128,24 +128,24 @@ void GeneticAlgorithm<T,N...>::check() const
    if (!initialSet.empty()) {
       for (int i = 0; i < nbparam; ++i) {
          if (initialSet[i] < lowerBound[i] || initialSet[i] > upperBound[i]) {
-            throw std::invalid_argument(" Error: in class galgo::Parameter<T,N>, initial parameter value cannot be outside the parameter boundaries, please choose a value between its lower and upper bounds.");
+            throw std::invalid_argument("Error: in class galgo::Parameter<T,N>, initial parameter value cannot be outside the parameter boundaries, please choose a value between its lower and upper bounds.");
          }
       }
       if (initialSet.size() != (unsigned)nbparam) {
-         throw std::invalid_argument(" Error: in class galgo::GeneticAlgorithm<T>, initial set of parameters does not have the same dimension than the number of parameters, please adjust.");
+         throw std::invalid_argument("Error: in class galgo::GeneticAlgorithm<T>, initial set of parameters does not have the same dimension than the number of parameters, please adjust.");
       }
    }
    if (SP < 1.0 || SP > 2.0) {
-      throw std::invalid_argument(" Error: in class galgo::GeneticAlgorithm<T>, selective pressure (SP) cannot be outside [1.0,2.0], please choose a real value within this interval.");
+      throw std::invalid_argument("Error: in class galgo::GeneticAlgorithm<T>, selective pressure (SP) cannot be outside [1.0,2.0], please choose a real value within this interval.");
    }
    if (elitpop > popsize || elitpop < 0) {
-      throw std::invalid_argument(" Error: in class galgo::GeneticAlgorithm<T>, elit population (elitpop) cannot outside [0,popsize], please choose an integral value within this interval.");
+      throw std::invalid_argument("Error: in class galgo::GeneticAlgorithm<T>, elit population (elitpop) cannot outside [0,popsize], please choose an integral value within this interval.");
    }
    if (covrate < 0.0 || covrate > 1.0) {
-      throw std::invalid_argument(" Error: in class galgo::GeneticAlgorithm<T>, cross-over rate (covrate) cannot outside [0.0,1.0], please choose a real value within this interval.");
+      throw std::invalid_argument("Error: in class galgo::GeneticAlgorithm<T>, cross-over rate (covrate) cannot outside [0.0,1.0], please choose a real value within this interval.");
    }
    if (genstep <= 0) {
-      throw std::invalid_argument(" Error: in class galgo::GeneticAlgorithm<T>, generation step (genstep) cannot be <= 0, please choose an integral value > 0.");
+      throw std::invalid_argument("Error: in class galgo::GeneticAlgorithm<T>, generation step (genstep) cannot be <= 0, please choose an integral value > 0.");
    }
 }
 
