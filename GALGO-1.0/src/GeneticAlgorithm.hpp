@@ -112,7 +112,7 @@ bool GeneticAlgorithm<T,N>::check() const
          }
       }
       if (initialSet.size() != (unsigned)nbparam) {
-         std::cerr << " Error: in class galgo::GeneticAlgorithm<T>, initial set of parameters (initialSet) does not have the same dimension as the number of parameters, please adjust.\n";
+         std::cerr << " Error: in class galgo::GeneticAlgorithm<T>, initial set of parameters (initialSet) does not have the same dimension than the number of parameters, please adjust.\n";
          return false;
       }
    }
