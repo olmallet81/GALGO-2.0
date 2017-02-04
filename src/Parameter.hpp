@@ -37,10 +37,10 @@ public:
    // constructor
    Parameter(const std::vector<T>& data) {
       if (data.size() < 2) {
-         throw std::invalid_argument(" Error: in class galgo::Parameter<T,N>, std::vector argument must contain at least 2 elements of type T, the lower bound and the upper bound, please adjust.");
+         throw std::invalid_argument("Error: in class galgo::Parameter<T,N>, std::vector argument must contain at least 2 elements of type T, the lower bound and the upper bound, please adjust.");
       }
       if (data[0] >= data[1]) {
-         throw std::invalid_argument(" Error: in class galgo::Parameter<T,N>, first std::vector argument (lower bound) cannot be equal or greater than second argument (upper bound), please amend.");
+         throw std::invalid_argument("Error: in class galgo::Parameter<T,N>, first std::vector argument (lower bound) cannot be equal or greater than second argument (upper bound), please amend.");
       }
       this->data = data;
    }
