@@ -32,7 +32,8 @@ std::vector<T> MyConstraint(const std::vector<T>& x)
 
 int main()
 {
-   // initializing parameters
+   // initializing parameters lower and upper bounds
+   // an initial value can be added if required after the upper bound
    galgo::Parameter<double> par1({0.0,1.0});
    galgo::Parameter<double> par2({0.0,13.0});
 
