@@ -14,7 +14,7 @@ std::string GetBinary(uint64_t value)
 {
    std::bitset<sizeof(uint64_t)*CHAR_BIT> bits(value);
    // NB: CHAR_BIT = number of bits in char usually 8 but not always on older machines
-   return bits.to_string<char,std::char_traits<char>,std::allocator<char> >();
+   return bits.to_string();
 }
 
 /*-------------------------------------------------------------------------------------------------*/
