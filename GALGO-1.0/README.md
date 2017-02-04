@@ -80,8 +80,8 @@ With:
    - *Selection* = for selection method
    - *CrossOver* = for cross-over method
    - *Mutation* = for mutation method 
-   - *Adaptation* = for adaptation to constaint method
-   - *Constraint* = for optimization contraint(s)
+   - *Adaptation* = for adaptation to constaint method (optional)
+   - *Constraint* = for contraint(s) function (optional)
   
 ## Member variables (public)
    - *lowerBound* = vector containing the parameter(s) lower bound
