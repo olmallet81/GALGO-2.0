@@ -94,7 +94,7 @@ With:
    - *popsize* = population size or number of chromosomes
    - *nbgen* = number of generations to run
    - *output* = control for outputting results
-   - *...args* = parameters to be estimated (the parameter pack allows to instantiate this class using an arbitrary number of objects of type *Parameter*)
+   - *...args* = parameter(s) to be estimated (the parameter pack allows to instantiate this class using an arbitrary number of objects of type *Parameter*)
    
 ### Member functors (public)
    - *Selection* = for selection method
