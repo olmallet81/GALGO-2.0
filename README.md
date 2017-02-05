@@ -49,7 +49,9 @@ GALGO also contains a default method for adaptation to constraint(s) (DAC).
 
 By default GALGO is set to run with no constraint and with RWS, P1XO and SPM.
 
-# C++ template class *Parameter*
+# Design
+
+## C++ template class *Parameter*
 
 This class is used to initialize the parameter(s) to be estimated by providing a lower bound, an upper bound and an initial value if required (optional).
 
@@ -61,16 +63,16 @@ namespace galgo {
 ```
 The template parameter T can be either float or double for the precision of the solution returned. The template parameter N corresponds to the number of bits to encode the parameter, it must be between 1 and 64.
 
-## Constructor
+### Constructor
 ```C++
 template <typename T, int N>
 Parameter(const std::vector<T>& data);
 ```
-## Member variable (public)
+### Member variable (public)
    - *data* = std::vector containing the parameter lower and upper bounds and an initial value if required
 
 
-# C++ template class *GeneticAlgorithm*
+## C++ template class *GeneticAlgorithm*
 
 This is the class you need to instantiate to run a genetic algorithm, declared and defined within the namespace galgo in the header GeneticAlgorithm.hpp. 
 
@@ -82,7 +84,7 @@ namespace galgo {
 ```
 The template parameter T can be either float or double for the precision of the solution returned. 
 
-## Constructor
+### Constructor
 ```C++
 template <typename T> template<int...N>
 GeneticAlgorithm(Functor<T> Objective,int popsize,int nbgen,int output,const Parameter<T,N>&...args);
@@ -94,14 +96,14 @@ With:
    - *output* = control for outputting results
    - *...args* = parameters to be estimated (the parameter pack allows to instantiate this class using an arbitrary number of objects of type *Parameter*)
    
-## Member functors (public)
+### Member functors (public)
    - *Selection* = for selection method
    - *CrossOver* = for cross-over method
    - *Mutation* = for mutation method 
    - *Adaptation* = for adaptation to constaint(s) (optional)
    - *Constraint* = for contraint(s) function (optional)
   
-## Member variables (public)
+### Member variables (public)
    - *covrate* = cross-over rate between 0 and 1 (set to 0.5 by default)
    - *mutrate* = mutation rate between 0 and 1 (set to 0.05 by default)
    - *SP* = selective pressure, for RSP selection method only, between 1 and 2 (set to 1.5 by default)
@@ -112,7 +114,7 @@ With:
    - *genstep* = generation step for outputting results (set to 10 by default)
    - *precision* = number of decimals for outputting results (set to 5 by default)
    
-## Member functions (public)
+### Member functions (public)
    - *run()* for running the genetic algorithm
    - *result()* for getting the population best chromosome
    
