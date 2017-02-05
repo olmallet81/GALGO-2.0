@@ -97,11 +97,11 @@ With:
    - *...args* = parameter(s) to be estimated (the parameter pack allows to instantiate this class using an arbitrary number of objects of type *Parameter*)
    
 ### Member functors (public)
-   - *Selection* = for selection method
-   - *CrossOver* = for cross-over method
-   - *Mutation* = for mutation method 
-   - *Adaptation* = for adaptation to constaint(s) (optional)
-   - *Constraint* = for contraint(s) function (optional)
+   - *Selection* = for setting the selection method (set to RWS by default)
+   - *CrossOver* = for setting the cross-over method (set to P1XO by default)
+   - *Mutation* = for setting the mutation method (set to SPM by default)
+   - *Adaptation* = for setting the adaptation to constaint(s) (optional)
+   - *Constraint* = for setting the contraint(s) function (optional)
   
 ### Member variables (public)
    - *covrate* = cross-over rate between 0 and 1 (set to 0.5 by default)
