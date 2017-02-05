@@ -181,10 +181,11 @@ $ ./run
 ```
 In this example we have constructed a class called MyObjective containing the function to optimize, this does not have to be necessarily the case if you do not need a complex objective function needing more arguments than the vector of parameters only.
 
-If the objective function is time consuming you can go parallel by using OpenMP:
+If the objective function is time consuming you can go parallel by compiling with OpenMP enabled:
 ```
 $ g++ -fopenmp -std=c++11 -O3 -Wall example.cpp -o run
 ```
+GALGO is set to use the maximum number of threads available by default when OpenMP is enabled, you can reduce this value insidethe header Galgo.hpp.
 
 ## Ouput
 
