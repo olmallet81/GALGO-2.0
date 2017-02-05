@@ -33,12 +33,14 @@ std::vector<T> MyConstraint(const std::vector<T>& x)
 int main()
 {
    // initializing parameters lower and upper bounds
-   // an initial value can be added if required after the upper bound
+   // an initial value can be added inside the initializer list after the upper bound
    galgo::Parameter<double> par1({0.0,1.0});
    galgo::Parameter<double> par2({0.0,13.0});
+   // here both parameter will be encoded using 16 bits the default value inside the template declaration
+   // this value can be modified but has to remain between 1 and 64
 
    // initiliazing genetic algorithm
-   galgo::GeneticAlgorithm<double,16,16> ga(MyObjective<double>::Objective,100,par1,par2,50,true);
+   galgo::GeneticAlgorithm<double> ga(MyObjective<double>::Objective,100,50,true,par1,par2);
 
    // setting constraints
    ga.Constraint = MyConstraint;
