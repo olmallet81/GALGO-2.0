@@ -61,7 +61,7 @@ namespace galgo {
    class Parameter;
 }
 ```
-The template parameter T can be either float or double for the precision of the solution returned. The template parameter N corresponds to the number of bits to encode the parameter, it must be between 1 and 64. This class inherits from an abstract base class called *BaseParameter*, declared and defined within the same header file, for storing the parameters inside the same container.
+The template parameter T can be either float or double for the precision of the solution returned. The template parameter N corresponds to the number of bits to encode the parameter, it must be between 1 and 64. This class inherits from an abstract base class called *BaseParameter*, declared and defined within the same header file, for storing the parameter(s) inside the same container even if they have been declared using a different template parameter N.
 
 ### Constructor
 ```C++
