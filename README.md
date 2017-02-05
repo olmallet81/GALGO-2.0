@@ -53,7 +53,7 @@ By default GALGO is set to run with no constraint and with RWS, P1XO and SPM.
 
 ## C++ template class *Parameter*
 
-This class is used to initialize the parameter(s) to be estimated by providing a lower bound, an upper bound and an initial value if required (optional).
+This class used to initialize the parameter(s) to be estimated by providing a lower bound, an upper bound and an initial value if required (optional), is declared and defined within the header file Parameter.hpp.
 
 ```C++
 namespace galgo {
@@ -61,7 +61,7 @@ namespace galgo {
    class Parameter;
 }
 ```
-The template parameter T can be either float or double for the precision of the solution returned. The template parameter N corresponds to the number of bits to encode the parameter, it must be between 1 and 64.
+The template parameter T can be either float or double for the precision of the solution returned. The template parameter N corresponds to the number of bits to encode the parameter, it must be between 1 and 64. This class inherits from an abstract base class called *BaseParameter*, declared and defined within the same header file, for storing the parameters inside the same container.
 
 ### Constructor
 ```C++
@@ -74,7 +74,7 @@ Parameter(const std::vector<T>& data);
 
 ## C++ template class *GeneticAlgorithm*
 
-This is the class you need to instantiate to run a genetic algorithm, declared and defined within the namespace galgo in the header GeneticAlgorithm.hpp. 
+This is the class you need to instantiate to run a genetic algorithm, declared and defined within the namespace galgo in the header file GeneticAlgorithm.hpp.  
 
 ```C++
 namespace galgo {
