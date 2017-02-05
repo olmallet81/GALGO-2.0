@@ -51,7 +51,7 @@ By default GALGO is set to run with no constraint and with RWS, P1XO and SPM.
 
 # C++ template class *Parameter*
 
-This class is used to initialize the parameter(s) to be estimated by providing a lower bound, an upper bound and an initial value if required.
+This class is used to initialize the parameter(s) to be estimated by providing a lower bound, an upper bound and an initial value if required (optional).
 
 ```C++
 namespace galgo {
