@@ -8,7 +8,6 @@
 //================================================================================================= 
 
 #include <algorithm>
-#include <armadillo>
 #include <bitset>
 #include <functional>
 #include <iomanip>
