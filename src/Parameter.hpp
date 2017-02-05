@@ -67,7 +67,7 @@ public:
       return N;
    }
    // return parameter initial data
-   const std::vector<T>& getData() override const {
+   const std::vector<T>& getData() const override {
       return data;
    }
 private:
