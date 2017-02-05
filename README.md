@@ -76,11 +76,11 @@ This is the class you need to instantiate to run a genetic algorithm, declared a
 
 ```C++
 namespace galgo {
-   template <typename T,int...N>
+   template <typename T>
    class GeneticAlgorithm;
 }
 ```
-The template parameter T can be either float or double for the precision of the solution returned. The template parameter pack int...N must contain the same numbers as the number of bits to encode each one of the parameters.
+The template parameter T can be either float or double for the precision of the solution returned. 
 
 ## Constructor
 ```C++
