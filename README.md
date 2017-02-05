@@ -1,5 +1,5 @@
 # GALGO-2.0
-A Genetic Algorithm in C++ with template metaprogramming and abstraction for constrained optimization.
+Genetic Algorithm in C++ with template metaprogramming and abstraction for constrained optimization.
 
 # Description
 GALGO is a C++ template library, headers only, designed to solve a problem under constraints (or not) by maximizing or minimizing an objective function on given boundaries. GALGO can also achieve multi-objective optimization. It does not use any external C++ library, only the Standard Template Library. GALGO is fast and can use parallelism when required through OpenMP. GALGO is flexible and has been written in a way allowing the user to easily add new methods to the genetic algorithm. This library already contains some methods for selection, cross-over and mutation among the most widely used. The user can choose among these pre-existing methods or create new ones. The new version of this library (2.0) is using metaprogramming with variadic templates and abstraction to allow optimization on an arbitrary number of parameters encoded on different number of bits.
