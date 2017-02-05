@@ -33,6 +33,7 @@
 
 namespace galgo {
 
+// forward declarations
 template <typename T>
 class BaseParameter;
 
