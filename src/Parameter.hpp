@@ -63,7 +63,7 @@ private:
    }
    // decoding string to real value
    T decode(const std::string& str) const {
-      return data[0] + (GetValue(str) / (double)Randomize<N>::MAXVAL) * (data[1] - data[0]);
+      return data[0] + (GetValue(str) / static_cast<double>(Randomize<N>::MAXVAL)) * (data[1] - data[0]);
    }
    // return encoded parameter size in number of bits 
    T size() const {
