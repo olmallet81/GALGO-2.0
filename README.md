@@ -2,7 +2,7 @@
 Genetic Algorithm in C++ with template metaprogramming for constrained optimization.
 
 # Description
-GALGO is a C++ template library, headers only, designed to solve a problem under constraints (or not) by maximizing or minimizing an objective function on given boundaries. GALGO can also achieve multi-objective optimization. It does not use any external C++ library, only the Standard Template Library. GALGO is fast and can use parallelism when required through OpenMP. GALGO is flexible and has been written in a way allowing the user to easily add new methods to the genetic algorithm. This library already contains some methods for selection, cross-over and mutation among the most widely used. The user can choose among these pre-existing methods or create new ones. The new version of this library (2.0) is using metaprogramming with variadic templates to allow optimization on an arbitrary number of parameters encoded on different number of bits.
+GALGO is a C++ template library, headers only, designed to solve a problem under constraints (or not) by maximizing or minimizing an objective function on given boundaries. GALGO can also achieve multi-objective optimization. It does not use any external C++ library, only the Standard Template Library. GALGO is fast and can use parallelism when required through OpenMP. GALGO is flexible and has been written in a way allowing the user to easily add new methods to the genetic algorithm. This library already contains some methods for selection, cross-over and mutation among the most widely used. The user can choose among these pre-existing methods or create new ones. The new version of this library (2.0) is using metaprogramming with variadic templates and abstraction to allow optimization on an arbitrary number of parameters encoded on different number of bits.
 
 # Encoding and Decoding Chromosomes
 GALGO is based on chromosomes represented as a binary string of 0 and 1 containing the encoded parameters to be estimated. The user is free to choose the number of bits N to encode each one of them within the interval [1,64]. In the previous version of this library, this number had to be the same for all parameters to be estimated, in the new version 2.0 they can be encoded using a different number of bits. When initializing a population of chromosomes, a random 64 bits unsigned integer, we will call it X, will be generated for each parameter to be estimated, X being inside the interval [0,MAXVAL] where MAXVAL is the greatest unsigned integer obtained for the chosen number of bits. If the chosen number of bits to represent a gene is N, we will have:
@@ -84,15 +84,15 @@ The template parameter T can be either float or double for the precision of the 
 
 ## Constructor
 ```C++
-template <typename T, int...N>
-GeneticAlgorithm(Functor<T> Objective,int popsize,const Parameter<T,N>&...args,int nbgen,bool output=false);
+template <typename T> template<int...N>
+GeneticAlgorithm(Functor<T> Objective,int popsize,int nbgen,int output,const Parameter<T,N>&...args);
 ```
 With:
    - *objective* = objective function (function to optimize) 
    - *popsize* = population size or number of chromosomes
-   - *...args* = parameters to be estimated (the parameter pack allows to instantiate this class using an arbitrary number of objects of type *Parameter*)
    - *nbgen* = number of generations to run
-   - *output* = control for outputting results (set to false by default)
+   - *output* = control for outputting results
+   - *...args* = parameters to be estimated (the parameter pack allows to instantiate this class using an arbitrary number of objects of type *Parameter*)
    
 ## Member functors (public)
    - *Selection* = for selection method
@@ -144,25 +144,22 @@ public:
 template <typename T>
 std::vector<T> MyConstraint(const std::vector<T>& x)
 {
-   return {x[0]*x[1]+x[0]-x[1]+1.5, 10-x[0]*x[1]};
+   return {x[0]*x[1]+x[0]-x[1]+1.5,10-x[0]*x[1]};
 }
 // NB: a penalty will be applied if one of the constraints is > 0 
-// using the default adaptation to constraint(s) method 
+// using the default adaptation to constraint(s) method
 
 int main()
 {
    // initializing parameters lower and upper bounds
-   // an initial value can be added if required after the upper bound
-   // example: {0.0,1.0,0.5} and {0.0,13.0,0.5}
-   galgo::Parameter<double> par1({0.0,1.0});   
+   // an initial value can be added inside the initializer list after the upper bound
+   galgo::Parameter<double> par1({0.0,1.0});
    galgo::Parameter<double> par2({0.0,13.0});
-   // encoded on 16 bits by default but this value can be modified
+   // here both parameter will be encoded using 16 bits the default value inside the template declaration
+   // this value can be modified but has to remain between 1 and 64
 
    // initiliazing genetic algorithm
-   galgo::GeneticAlgorithm<double,16,16> ga(MyObjective<double>::Objective,100,par1,par2,50,true);
-   // NB: GeneticAlgorithm template arguments have to match the one used for the parameters
-   // for example if par1 was of type Parameter<double,20> and par2 of type Parameter<double,32> 
-   // then ga would need to be of type GeneticAlgorithm<double,20,32>, the order has to be respected.
+   galgo::GeneticAlgorithm<double> ga(MyObjective<double>::Objective,100,50,true,par1,par2);
 
    // setting constraints
    ga.Constraint = MyConstraint;
