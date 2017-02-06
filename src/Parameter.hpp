@@ -73,18 +73,18 @@ public:
 private:
    // encoding random unsigned integer
    std::string encode() const override {
-      std::string str = galgo::GetBinary(galgo::Randomize<N>::generate());
+      std::string str = GetBinary(galgo::Randomize<N>::generate());
       return str.substr(str.size() - N, N);
    }
    // encoding known unsigned integer
    std::string encode(T z) const override {
-      uint64_t value = galgo::Randomize<N>::MAXVAL * (z - data[0]) / (data[1] - data[0]);
-      std::string str = galgo::GetBinary(value);
+      uint64_t value = Randomize<N>::MAXVAL * (z - data[0]) / (data[1] - data[0]);
+      std::string str = GetBinary(value);
       return str.substr(str.size() - N, N);
    }
    // decoding string to real value
    T decode(const std::string& str) const override {
-      return data[0] + (galgo::GetValue(str) / static_cast<double>(galgo::Randomize<N>::MAXVAL)) * (data[1] - data[0]);
+      return data[0] + (GetValue(str) / static_cast<double>(Randomize<N>::MAXVAL)) * (data[1] - data[0]);
    }
 };
 
