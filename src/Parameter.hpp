@@ -33,7 +33,7 @@ public:
    virtual std::string encode() const = 0;
    virtual std::string encode(T z) const = 0;
    virtual T decode(const std::string& y) const = 0;
-   virtual T size() const = 0;
+   virtual int size() const = 0;
    virtual const std::vector<T>& getData() const = 0;
 };
 
@@ -63,7 +63,7 @@ public:
       this->data = data;
    }
    // return encoded parameter size in number of bits
-   T size() const override {
+   int size() const override {
       return N;
    }
    // return parameter initial data
