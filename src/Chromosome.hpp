@@ -141,8 +141,8 @@ inline void Chromosome<T>::initialize()
 
 // evaluate chromosome fitness
 template <typename T>
-inline void Chromosome<T>::evaluate() {
-
+inline void Chromosome<T>::evaluate() 
+{
    int i(0);
    for (const auto& x : ptr->param) {
       // decoding chromosome: converting chromosome string into a real value
