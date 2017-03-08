@@ -31,17 +31,17 @@ private:
    std::vector<int> idx;          // indexes for chromosome breakdown
 
 public: 
-   // objective function functor
-   Functor<T> Objective; 
-   // selection method functor initialized to roulette wheel selection                                   
+   // objective function pointer
+   Func<T> Objective; 
+   // selection method initialized to roulette wheel selection                                   
    void (*Selection)(Population<T>&) = RWS;  
-   // cross-over method functor initialized to 1-point cross-over                                
+   // cross-over method initialized to 1-point cross-over                                
    void (*CrossOver)(const Population<T>&, CHR<T>&, CHR<T>&) = P1XO;
-   // mutation method functor initialized to single-point mutation 
+   // mutation method initialized to single-point mutation 
    void (*Mutation)(CHR<T>&) = SPM;  
-   // adaptation to constraint(s) method functor                                        
+   // adaptation to constraint(s) method                                        
    void (*Adaptation)(Population<T>&) = nullptr; 
-   // constraint(s) functor                               
+   // constraint(s)                               
    std::vector<T> (*Constraint)(const std::vector<T>&) = nullptr; 
 
    T covrate = .50;   // cross-over rate
@@ -57,7 +57,7 @@ public:
 
    // constructor
    template <int...N>
-   GeneticAlgorithm(Functor<T> objective, int popsize, int nbgen, bool output, const Parameter<T,N>&...args);
+   GeneticAlgorithm(Func<T> objective, int popsize, int nbgen, bool output, const Parameter<T,N>&...args);
    // run genetic algorithm
    void run();
    // return best chromosome 
@@ -88,7 +88,7 @@ private:
    
 // constructor
 template <typename T> template <int...N>
-GeneticAlgorithm<T>::GeneticAlgorithm(Functor<T> objective, int popsize, int nbgen, bool output, const Parameter<T,N>&...args)
+GeneticAlgorithm<T>::GeneticAlgorithm(Func<T> objective, int popsize, int nbgen, bool output, const Parameter<T,N>&...args)
 {
    this->Objective = objective;
    // getting total number of bits per chromosome
