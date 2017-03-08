@@ -96,7 +96,7 @@ With:
    - *output* = control for outputting results
    - *args* = parameter(s) to be estimated (the parameter pack allows to instantiate this class using an arbitrary number of objects of type *Parameter*)
    
-### Member functors (public)
+### Member function pointers (public)
    - *Selection* = for setting the selection method (set to RWS by default)
    - *CrossOver* = for setting the cross-over method (set to P1XO by default)
    - *Mutation* = for setting the mutation method (set to SPM by default)
