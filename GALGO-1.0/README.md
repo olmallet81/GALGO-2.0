@@ -76,7 +76,7 @@ With:
    - *nbgen* = number of generations to run
    - *output* = control for outputting results (set to false by default)
    
-## Member functors (public)
+## Member function pointers (public)
    - *Selection* = for selection method
    - *CrossOver* = for cross-over method
    - *Mutation* = for mutation method 
