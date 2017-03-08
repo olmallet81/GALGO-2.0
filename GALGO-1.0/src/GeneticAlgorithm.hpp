@@ -38,11 +38,11 @@ private:
 public: 
    // objective function pointer
    Func<T> Objective; 
-   // selection method functor initialized to roulette wheel selection                                   
+   // selection method initialized to roulette wheel selection                                   
    void (*Selection)(Population<T,N>&) = RWS;  
-   // cross-over method functor initialized to 1-point cross-over                                
+   // cross-over method initialized to 1-point cross-over                                
    void (*CrossOver)(const Population<T,N>&, CHR<T,N>&, CHR<T,N>&) = P1XO;
-   // mutation method functor initialized to single-point mutation 
+   // mutation method initialized to single-point mutation 
    void (*Mutation)(CHR<T,N>&) = SPM;  
    // adaptation to constraint(s) method                                      
    void (*Adaptation)(Population<T,N>&) = nullptr; 
