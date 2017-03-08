@@ -20,7 +20,7 @@ class GeneticAlgorithm
    friend class Chromosome;
 
    template <typename K>
-   using Functor = std::vector<K> (*)(const std::vector<K>&);
+   using Func = std::vector<K> (*)(const std::vector<K>&);
 
 private:
    Population<T> pop;             // population of chromosomes
