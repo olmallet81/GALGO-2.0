@@ -21,7 +21,7 @@ class GeneticAlgorithm
    friend class Chromosome;
 
    template <typename K>
-   using Functor = std::vector<K> (*)(const std::vector<K>&);
+   using Func = std::vector<K> (*)(const std::vector<K>&);
 
 private:
    Population<T,N> pop;       // population of chromosomes
@@ -36,17 +36,17 @@ private:
    static constexpr uint64_t MAXVAL = MAXVALUE<N>::value - 1; // maximum unsigned integral value obtained from N bits, evaluated at compile time
   
 public: 
-   // objective function functor
-   Functor<T> Objective; 
+   // objective function pointer
+   Func<T> Objective; 
    // selection method functor initialized to roulette wheel selection                                   
    void (*Selection)(Population<T,N>&) = RWS;  
    // cross-over method functor initialized to 1-point cross-over                                
    void (*CrossOver)(const Population<T,N>&, CHR<T,N>&, CHR<T,N>&) = P1XO;
    // mutation method functor initialized to single-point mutation 
    void (*Mutation)(CHR<T,N>&) = SPM;  
-   // adaptation to constraint(s) method functor                                        
+   // adaptation to constraint(s) method                                      
    void (*Adaptation)(Population<T,N>&) = nullptr; 
-   // constraint(s) functor                               
+   // constraint(s)                              
    std::vector<T> (*Constraint)(const std::vector<T>&) = nullptr; 
 
    T covrate = .50;   // cross-over rate
@@ -61,7 +61,7 @@ public:
    int precision = 5; // precision for outputting results
 
    // constructor
-   GeneticAlgorithm(Functor<T> objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int nbgen, bool output = false);
+   GeneticAlgorithm(Func<T> objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int nbgen, bool output = false);
    // run genetic algorithm
    void run();
    // return best chromosome 
@@ -84,7 +84,7 @@ private:
    
 // constructor
 template <typename T, int N>
-GeneticAlgorithm<T,N>::GeneticAlgorithm(Functor<T> objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int nbgen, bool output)
+GeneticAlgorithm<T,N>::GeneticAlgorithm(Func<T> objective, int popsize, const std::vector<T>& lowerBound, const std::vector<T>& upperBound, int nbgen, bool output)
 {
    this->Objective = objective;
    this->nbparam = upperBound.size();
