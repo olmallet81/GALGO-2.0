@@ -87,7 +87,7 @@ The template parameter T can be either float or double for the precision of the 
 ### Constructor
 ```C++
 template <typename T> template<int...N>
-GeneticAlgorithm(Functor<T> Objective,int popsize,int nbgen,int output,const Parameter<T,N>&...args);
+GeneticAlgorithm(Functor<T> Objective,int popsize,int nbgen,bool output,const Parameter<T,N>&...args);
 ```
 With:
    - *objective* = objective function (function to optimize) 
