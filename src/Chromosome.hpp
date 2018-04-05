@@ -146,7 +146,8 @@ inline void Chromosome<T>::evaluate()
    int i(0);
    for (const auto& x : ptr->param) {
       // decoding chromosome: converting chromosome string into a real value
-      param[i] = x->decode(chr.substr(ptr->idx[i++], x->size()));
+      param[i] = x->decode(chr.substr(ptr->idx[i], x->size()));
+      i++;
    } 
    // computing objective result(s) 
    result = ptr->Objective(param);
