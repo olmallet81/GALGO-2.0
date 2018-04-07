@@ -9,7 +9,7 @@ GALGO is based on chromosomes represented as a binary string of 0 and 1 containi
 ```
 MAXVAL = 2^N - 1
 ```
-X will be then converted into a binary string of 0 and 1, the binary string will be truncated to the desired number of bits and added to the new chromosome. Once selection, cross-over and mutation have been applied, the new binary string obtained is decoded to get the new estimated parameter value Y. To do so, the binary string is first converted back into an unsigned integer X and the following equation is applied, with [minY,maxY] representing the parameter boundaries: 
+X will be then converted into a binary string of 0 and 1, the binary string will be truncated to the desired number of bits and added to the new chromosome. Once selection, cross-over and mutation have been applied, the new binary string obtained is decoded to get the new estimated parameter value Y. To do so, the binary string is first converted back into an unsigned integer X and the following equation is applied, with [minY,maxY] representing the parameter boundaries:
 ```
 Y = minY + (X / MAXVAL) * (maxY - minY)
 ```
@@ -82,7 +82,7 @@ namespace galgo {
    class GeneticAlgorithm;
 }
 ```
-The template parameter T can be either float or double for the precision of the solution returned. 
+The template parameter T can be either float or double for the precision of the solution returned.
 
 ### Constructor
 ```C++
@@ -90,7 +90,7 @@ template <typename T> template<int...N>
 GeneticAlgorithm(Functor<T> Objective,int popsize,int nbgen,bool output,const Parameter<T,N>&...args);
 ```
 With:
-   - *objective* = objective function (function to optimize) 
+   - *objective* = objective function (function to optimize)
    - *popsize* = population size or number of chromosomes
    - *nbgen* = number of generations to run
    - *output* = control for outputting results
@@ -108,7 +108,7 @@ With:
    - *mutrate* = mutation rate between 0 and 1 (set to 0.05 by default)
    - *SP* = selective pressure, for RSP selection method only, between 1 and 2 (set to 1.5 by default)
    - *tolerance* = terminal condition to stop the algorithm (inactive by default, set to 0)
-   - *elitpop* = elit population size, must not be greater than population size (set to 1 by default)
+   - *elitpop* = elite population size, must not be greater than population size (set to 1 by default)
    - *matsize* = mating population size (set to population size by default)
    - *tntsize* = tournament size, for TNT selection method only (set to 10 by default)
    - *genstep* = generation step for outputting results (set to 10 by default)
@@ -117,7 +117,7 @@ With:
 ### Member functions (public)
    - *run()* for running the genetic algorithm
    - *result()* for getting the population best chromosome
-   
+
 NB: in the previous version the user had access to the parameter(s) lower bound, upper bound and initial set, they are now private inside *GeneticAlgorithm* class as these values are set when declaring an object using *Parameter* class. They can be modified at any time once the parameter(s) declared as they are contained inside a public vector.
 
 # Example
@@ -148,7 +148,7 @@ std::vector<T> MyConstraint(const std::vector<T>& x)
 {
    return {x[0]*x[1]+x[0]-x[1]+1.5,10-x[0]*x[1]};
 }
-// NB: a penalty will be applied if one of the constraints is > 0 
+// NB: a penalty will be applied if one of the constraints is > 0
 // using the default adaptation to constraint(s) method
 
 int main()
@@ -159,7 +159,7 @@ int main()
    // an initial value can be added inside the initializer list after the upper bound
    // both parameter will be encoded using 16 bits (default value)
    // this value can be modified but has to remain between 1 and 64
-   // example using 20 and 32 bits and intial values of 0.5 and 1.0:
+   // example using 20 and 32 bits and initial values of 0.5 and 1.0:
    // galgo::Parameter<double,20> par1({0.0,1.0,0.5});
    // galgo::Parameter<double,32> par2({0.0,13.0,1.0});
 
@@ -190,7 +190,7 @@ If the objective function is time consuming you can go parallel by compiling wit
 ```
 $ g++ -fopenmp -std=c++11 -O3 -Wall example.cpp -o run
 ```
-GALGO is set to use the maximum number of threads available by default when OpenMP is enabled, you can reduce this value insidethe header Galgo.hpp.
+GALGO is set to use the maximum number of threads available by default when OpenMP is enabled, you can reduce this value inside the header Galgo.hpp.
 
 ## Ouput
 
