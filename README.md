@@ -217,4 +217,3 @@ NB: the random number generator being randomly seeded you will not get exactly t
 For those who want to know more about the methods I have implemented for selection and adaptation to constraints, please find below the links to the documents I have used:
 - [Transform Ranking: a New Method of Fitness Scaling in Genetic Algorithms](http://shura.shu.ac.uk/5638/1/AI2008.pdf)
 - [Constraint handling strategies in Genetic Algorithms](https://core.ac.uk/download/pdf/12039642.pdf?repositoryId=437)
-
